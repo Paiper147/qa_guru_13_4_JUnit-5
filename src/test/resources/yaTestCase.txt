@@ -1,0 +1,28 @@
+ NAME: При поиске в Яндексе по запросу {TEST DATA} в результатах отображается текст {TEST DATA}
+ TEST DATA: ["JUnit 5", "TestNG"]
+ PRIORITY: CRITICAL
+ PRECONDITIONS:
+    - Открыт браузер
+    - Находимся на стартовой странице ya.ru
+ STEPS:
+    - В поле поиска ввести текст {TEST DATA}
+    - Нажать "Найти"
+ EXPECTED Result:
+    - В результатах отображается текст {TEST DATA}
+
+
+ NAME: При поиске в Яндексе по запросу {TEST DATA[0]} в результатах отображается текст {TEST DATA[1]}
+ TEST DATA: [
+        ["JUnit 5" / team’s statement on the war in Ukraine]
+        ["TestNG" / is a testing framework designed to simplify a broad range of testing needs]
+        ]
+ PRIORITY: CRITICAL
+ PRECONDITIONS:
+    - Открыт браузер
+    - Находимся на стартовой странице ya.ru
+ STEPS:
+    - В поле поиска ввести текст {TEST DATA}
+    - Нажать "Найти"
+ EXPECTED Result:
+    - В результатах отображается текст {TEST DATA}
+
