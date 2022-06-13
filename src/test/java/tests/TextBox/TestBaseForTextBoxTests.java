@@ -1,4 +1,4 @@
-package tests;
+package tests.TextBox;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;

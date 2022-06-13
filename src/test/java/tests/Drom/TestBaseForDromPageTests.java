@@ -1,9 +1,9 @@
-package tests;
+package tests.Drom;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
-public class TestBaseForMailPage {
+public class TestBaseForDromPageTests {
 
     @BeforeAll
     static void beforeAll(){

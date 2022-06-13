@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import tests.DromPageTests;
-import tests.TestBaseForDromPageTests;
-import tests.TestDataForDromPage;
+import tests.Drom.DromPageTests;
+import tests.Drom.TestBaseForDromPageTests;
+import tests.Drom.TestDataForDromPage;
 
 public class DromPage extends TestBaseForDromPageTests {
 

@@ -1,7 +1,8 @@
-package tests;
+package pages;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import tests.Mail.MailPageTests;
 
 public class MailPage {
 
@@ -11,7 +12,7 @@ public class MailPage {
     String searchInput_2 = "guru";
 
     @DisplayName("Not ParameterizedTest. Search validation of \"Selenide\"")
-    @Test    
+    @Test
     void test1(){
         mailPageTests.openPage()
                 .searchInput(searchInput_1)

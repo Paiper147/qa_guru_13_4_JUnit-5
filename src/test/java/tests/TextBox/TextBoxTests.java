@@ -1,4 +1,4 @@
-package tests;
+package tests.TextBox;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

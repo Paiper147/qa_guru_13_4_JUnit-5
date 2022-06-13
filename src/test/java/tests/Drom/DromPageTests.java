@@ -1,13 +1,7 @@
-package tests;
+package tests.Drom;
 
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
-import pages.DromPage;
 
-import java.util.Map;
-import java.util.Random;
-
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 

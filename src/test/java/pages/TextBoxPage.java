@@ -6,8 +6,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import tests.TestBaseForTextBoxTests;
-import tests.TextBoxTests;
+import tests.TextBox.TestBaseForTextBoxTests;
+import tests.TextBox.TextBoxTests;
 
 public class TextBoxPage extends TestBaseForTextBoxTests {
 

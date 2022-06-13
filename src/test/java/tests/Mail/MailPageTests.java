@@ -1,8 +1,6 @@
-package tests;
+package tests.Mail;
 
 import com.codeborne.selenide.Condition;
-
-import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;

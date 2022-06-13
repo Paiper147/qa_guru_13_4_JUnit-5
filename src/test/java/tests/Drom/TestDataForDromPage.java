@@ -1,4 +1,4 @@
-package tests;
+package tests.Drom;
 
 import java.util.HashMap;
 import java.util.Map;
