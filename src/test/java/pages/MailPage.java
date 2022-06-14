@@ -1,22 +1,37 @@
 package pages;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import tests.Mail.MailPageTests;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+import static com.codeborne.selenide.Selenide.*;
 
 public class MailPage {
 
-    MailPageTests mailPageTests = new MailPageTests();
+    public MailPage openPage(){
+        open("https://mail.ru/");
+        return this;
+    }
 
-    String searchInput_1 = "Selenide";
-    String searchInput_2 = "guru";
+    public MailPage searchInput(String searchData){
+        $("#q").setValue(searchData);
+        return this;
+    }
 
-    @DisplayName("Not ParameterizedTest. Search validation of \"Selenide\"")
-    @Test
-    void test1(){
-        mailPageTests.openPage()
-                .searchInput(searchInput_1)
-                .searchClick()
-                .checkResult(searchInput_1);
+    public MailPage searchClick(){
+        $("[data-testid=search-button]").click();
+        return this;
+    }
+    public MailPage checkResult(String searchData){
+        $("#js-result").shouldHave(Condition.text(searchData));
+        return this;
+    }
+
+    public List<String> returnTitlesSearchResultsInListOfStrings(){
+        ElementsCollection inputSelenideCollection = $$(".SnippetResultTitle-title.result__title");
+        List<String> outputTitlesListStrings = inputSelenideCollection.texts();
+        return outputTitlesListStrings;
     }
 }

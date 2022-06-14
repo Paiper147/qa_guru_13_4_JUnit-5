@@ -1,12 +1,12 @@
-package tests.Drom;
+package guru.qa.Drom;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class TestDataForDromPage {
 
-    public final static String BRAND_1 = "Лада";
-    public final static String BRAND_2 = "Kia";
+    public  static final String BRAND_1 = "Лада";
+    public static final String BRAND_2 = "Kia";
 
 //    public final static Map<String, String[]> BRAND_AND_MODEL = new HashMap<>();
 //    static {

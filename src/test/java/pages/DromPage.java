@@ -1,59 +1,42 @@
 package pages;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
-import tests.Drom.DromPageTests;
-import tests.Drom.TestBaseForDromPageTests;
-import tests.Drom.TestDataForDromPage;
+import com.codeborne.selenide.CollectionCondition;
 
-public class DromPage extends TestBaseForDromPageTests {
+import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selenide.*;
 
-    DromPageTests dromPageTests = new DromPageTests();
+public class DromPage {
 
-    @DisplayName("Not ParameterizedTest. Search validation of \"Лада\"")
-    @Test
-    void test1(){
-        dromPageTests.openPage()
-                .brandChoice(TestDataForDromPage.BRAND_1)
-                .submitClick()
-                .checkResult(TestDataForDromPage.BRAND_1);
+    public DromPage openPage(){
+        open("https://auto.drom.ru/");
+        return this;
     }
 
-    @DisplayName("Not ParameterizedTest. Search validation of \"Kia\"")
-    @Test
-    void test2(){
-        dromPageTests.openPage()
-                .brandChoice(TestDataForDromPage.BRAND_2)
-                .submitClick()
-                .checkResult(TestDataForDromPage.BRAND_2);
+    public DromPage brandChoice(String brand){
+        $("input[placeholder=Марка]").scrollTo().click();
+        $("[data-ftid=component_select_dropdown]").$(withText(brand)).click();
+        return this;
     }
 
-    @ValueSource(strings = {TestDataForDromPage.BRAND_1, TestDataForDromPage.BRAND_2})
-    @ParameterizedTest(name = "ParameterizedTest. ValueSource. Search validation of {0}")
-    void valueSourceTestBrands(String testData){
-        dromPageTests.openPage()
-                .brandChoice(testData)
-                .submitClick()
-                .checkResult(testData);
+    public DromPage modelChoice(String model){
+        $("input[placeholder=Модель]").scrollTo().click();
+        $("input[placeholder=Модель]").scrollTo().sendKeys(model);
+//        $("input[placeholder=Модель]").scrollTo().setValue(model).pressEnter();
+
+        $("input[placeholder=Модель]").pressEnter();
+//        $("input[value=" + model + "][placeholder=Модель]").pressEnter();
+        return this;
     }
 
-    @CsvSource(value = {
-            "Лада, Гранта",
-            "Kia, Rio"
-    })
-    @ParameterizedTest(name = "ParameterizedTest. ValueSource. Search validation of {0}")
-    void csvSourceTestBrands(String brand, String model){
-        dromPageTests.openPage()
-                .brandChoice(brand)
-                .modelChoice(model)
-                .submitClick()
-                .checkResult(model);
+    public DromPage submitClick(){
+        $("[data-ftid=sales__filter_submit-button]").scrollTo().click();
+        return this;
     }
 
-
-
+    public DromPage checkResult(String brand){
+//        $("[data-ftid=bull_title]").scrollTo().shouldHave(Condition.text(brand));
+        $$("[data-ftid=bull_title]").shouldHave(CollectionCondition.texts(brand));
+        return this;
+    }
 
 }

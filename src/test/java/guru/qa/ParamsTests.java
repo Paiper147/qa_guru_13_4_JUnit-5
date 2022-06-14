@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -15,7 +14,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class ParamsTest {
+public class ParamsTests {
 
     @Test
     void yaTestJUnit5(){
